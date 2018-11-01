@@ -1,11 +1,13 @@
+// i.e
+// csv2jsonDirectoryConverter({
+// 	input: "config/i18next/csv",
+// 	output: "config/i18next/locales"
+// }).start()
+
 const path = require('path');
 const fs = require('fs');
 const csvParse = require('csv-parse');
 
-// run with node.js
-// will load all files from input directory, 
-// convert them as csv2json,
-// and put results in output directory
 function csv2jsonDirectoryConverter(cfg) {
 
 	const csvDir = cfg.input || 'input_csv';
@@ -130,7 +132,4 @@ function csv2jsonDirectoryConverter(cfg) {
 	};
 }
 
-csv2jsonDirectoryConverter({
-	input: "config/i18next/csv",
-	output: "config/i18next/locales"
-}).start()
+module.exports = csv2jsonDirectoryConverter;
